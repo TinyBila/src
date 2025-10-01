@@ -1,11 +1,10 @@
 import { AppProps } from 'next/app';
-import { Provider } from 'react-redux';
-import store from '../store';
+import { UserProvider } from '../context/UserContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Provider store={store}>
+  <UserProvider>
     <Component {...pageProps} />
-  </Provider>
+  </UserProvider>
 );
 
 export default MyApp;
