@@ -1,13 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../store';
-import { setUser } from '../store/slices/userSlice';
+import { useUser } from '../context/UserContext';
 
 const UserProfile = () => {
-  const dispatch: AppDispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user);
+  const { user, setUser } = useUser();
 
   const updateUser = () => {
-    dispatch(setUser({ name: 'John Doe', email: 'john@example.com' }));
+    setUser({ name: 'John Doe', email: 'john@example.com' });
   };
 
   return (
